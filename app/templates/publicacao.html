@@ -7,36 +7,42 @@
   <div class="d-flex justify-content-center row">
     <div class="col-md-8">
       <div class="feed p-2">
-        <div
-          class="
-            d-flex
-            flex-row
-            justify-content-between
-            align-items-center
-            p-2
-            bg-white
-            border
-          "
-        >
-          <div class="feed-text px-3">
-            <label for="exampleFormControlInput1">Titulo</label>
-           <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Titulo da pulicação ">
-           <label for="exampleFormControlTextarea1">Conteúdo</label>
-           <textarea class="form-control" id="exampleFormControlTextarea" rows="5"></textarea>
-            <input type="file" class="form-control-file" id="exampleFormControlFile1">
-            <button  type="submit" id="btn1" class="btn btn-primary mb-2">Publicar</type=>
-    
+        <div class="div-geral">
+          <div class="div-one">
+            <h1 class="titulo-page">Nova publicação</h1>
+            <p>Crie e compartilhe com seus seguidores.</p>
           </div>
-          
+          <form class="div-two">
+            <div class="previews">
+              <div>
+                <input type="file" name="file" id="img-input" class="inputfile">
+                <label for="img-input" class="label_input-img">
+                  <img src="../static/img/cam.svg" alt="" srcset="">
+                  Imagem
+                </label>
+              </div>
+              <div class="preview" id="div-preview">
+                <button class="button_fechar" onclick="apagarImg()">x</button>
+                <img  class="preview-img" id="preview" src="" alt="">
+              </div>
+            </div>
+            
+            <div class="div-legendas">
+              <label for="exampleFormControlInput1">Titulo</label>
+              <input type="text" class="input-div" id="exampleFormControlInput1" placeholder="Titulo da postagem" required>
+              <label for="exampleFormControlTextarea1">Conteúdo</label>
+              <textarea class="input-div" id="exampleFormControlTextarea" rows="5" placeholder="Adicione a descrição"></textarea>
+            </div>
+           
+            <input type="submit" id="btn1" class="btn btn-primary mb-2" value="Publicar">
+          </form>
+
+        </div>
       </div>
     </div>
   </div>
-</div>
 
-  
-  
-  <form>
- 
-  
-{% endblock %}
 
+  <script src="../static/js/polls/functions.js"></script>
+
+  {% endblock %}
