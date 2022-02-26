@@ -1,3 +1,6 @@
 #a-perfil{
     color: white;
 }
+.search{
+    display: none !important;
+}
