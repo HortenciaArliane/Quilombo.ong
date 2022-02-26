@@ -2,107 +2,95 @@
 
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta content="" name="description" />
-  <meta content="" name="keywords" />
+  <meta content="" name="description"/>
+  <meta content="" name="keywords"/>
   <title>{% block title%} {% endblock%}</title>
-
-  <link rel="stylesheet" type="text/css" href="{% static 'polls/index.css' %}" />
+  {% block links%} {% endblock%}
   <link rel="stylesheet" type="text/css" href="{% static 'polls/home.css' %}" />
+  <link rel="stylesheet" type="text/css" href="../static/polls/{% block page%}{% endblock%}">
   <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" />
   <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js" />
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
 </head>
 
 <body>
   <header>
-    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #5c4237">
-      <a class="navbar-brand" href="/">
-        {% load static %}
-        <img class="logo rounded-circle" width="45" height="45" />
-      </a>
-      <a class="navbar-brand" href="{% url 'home' %}">Quilombo.ong</a>
-
-      <div class="collapse navbar-collapse" id="textoNavbar">
-        <!-- <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-        <a class="nav-link" href="">Home <span class="sr-only">(Página atual)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/login"class="btn btn-info"> Acesso</a>
-      </li>
-      
-
-      <span class="navbar-text align-baseline">
-      <form class="form-inline ">
-        <input type="text" name="search" placeholder="Search..">
-        <input type= "text"class="form-control mr-sm-2" type="search" placeholder="Encontre sua comunidade" aria-label="Pesquisar">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
-      </form>
-  
-   </span>
-    </ul>-->
+    <nav class="bardesk navbar navbar-expand-lg navbar-dark" style="background-color: #5c4237">
+      <div>
+        <a class="navbar-brand" href="/">
+          {% load static %}
+          <img class="logo rounded-circle" width="45" height="45" />
+        </a>
+        <a class="navbar-brand" href="{% url 'home' %}">Quilombo.ong</a>
       </div>
-      <div class="collapse navbar-collapse" id="textoNavbar">
+
+      <div class="search" id="textoNavbar">
         <form class="text" method="get">
           <input type="text" class="form-control mr-sm-2 align-baseline" type="search" id="search"
             placeholder="Encontre sua comunidade" aria-label="Pesquisar" />
         </form>
+
         <form class="text">
           <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
             Buscar
           </button>
         </form>
       </div>
+
+
       <div class="nav-item" id="textoNavbar">
         {% if user.is_authenticated %}
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
-          aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+
+        <button class="navbar-toggler" type="button"  onclick="abrirMenu()" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarScroll">
+
+        <div class="mobile-nav" id="navbarScroll" style="display: none;">
           <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page"> Olá, {{user.username}}</a>
+              <a class="nav-link" href="/" id="a-home">Início</a>
             </li>
 
             <li class="nav-item">
-              <a class="nav-link" href="/perfil" class="btn btn-info">
-                Perfil</a>
+              <a class="nav-link" href="/perfil" class="btn btn-info"  id="a-perfil">Perfil</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/publicacao" class="btn btn-info">
-                Publicar</a>
+              <a class="nav-link" href="/publicacao" class="btn btn-info" id="a-publicar">Publicar</a>
             </li>
 
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'account_logout' %}">Sair</a>
+              <a class="nav-link" href="{% url 'account_logout' %}" id="a-sair">Sair</a>
             </li>
           </ul>
-          {% else %}
+        {% else %}
+
           <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll">
+
             <li class="nav-item">
               <a class="nav-link" href="{% url 'account_login' %}">Entrar</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/informativo" class="btn btn-info">
-                Cadastre-se</a>
-            </li>
-
-            {% endif %}
           </ul>
         </div>
+        {% endif %}
     </nav>
   </header>
 
-  <main class="container">{% block content %} {% endblock %}</main>
-  <script src="{% static 'js/polls/scripts.js' %}"></script>
+  <main class="container">
+    {% block content %} {% endblock %}
+  </main>
+
+  <script src="{% static 'js/polls/functions.js' %}"></script>
 </body>
 
 </html>

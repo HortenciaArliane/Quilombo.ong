@@ -55,6 +55,7 @@ def publicar(request):
         #form.save()
         #return redirect('index.html')
     return render (request , 'index.html')
+    
 def informativo(request):
     return render(request, 'informativo.html')
 

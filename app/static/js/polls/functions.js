@@ -20,4 +20,14 @@ function apagarImg(){
     document.getElementById("div-preview").style.display = 'none';
 
 }
+
 document.getElementById("img-input").addEventListener("change", exibirImagem, false);
+
+function abrirMenu(){
+    display = document.getElementById('navbarScroll').style.display;
+    if(display == "none")
+    document.getElementById('navbarScroll').style.display = 'block';
+    else
+    document.getElementById('navbarScroll').style.display = 'none';
+
+}
