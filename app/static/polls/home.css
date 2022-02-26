@@ -43,30 +43,31 @@ body {
     text-align: center;
 }
 
-.mobile-nav,.collapse,.show,.collapsing{
-    margin-top: 0.9em;
-    position: absolute;
-    z-index: 2;
-    background: #5c4237;
-    margin-left: -4em;
-    padding: 1em 1.5em 1em 3em;
-    text-align: end;
-    display: none;
-    transition: 1s;
-}
-
 .search{
     display: flex;
     gap: 6px;
 }
-
+.mobile-nav{
+    display: block;
+}
 .bardesk{
     display: flex !important;
     justify-content: space-between !important;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 1000px) {
     .search{
         display: none !important;
+    }
+    .mobile-nav{
+        margin-top: 0.9em;
+        position: absolute;
+        z-index: 2;
+        background: #5c4237;
+        margin-left: -4em;
+        padding: 1em 1.5em 1em 3em;
+        text-align: end;
+        display: none;
+        transition: 1s;
     }
 }
