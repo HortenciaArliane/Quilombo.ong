@@ -98,3 +98,6 @@
     flex-direction: column;
     gap: 0.5em;
 }
+.search{
+    display: none !important;
+}
