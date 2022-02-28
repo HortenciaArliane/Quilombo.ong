@@ -1,0 +1,85 @@
+body{    
+    background-color: #f0f0f0;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    border-radius: 0.5em;
+    margin-right: auto;
+    margin-left: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 38px;
+    margin-bottom: 38px;
+}
+
+.pagiInformacoes {
+    background-color: #e6e1e1;
+    border-radius: 0.5em;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-right: 120px;
+    padding-left: 120px;
+}
+
+.ladoEsquerdo {   
+    padding-bottom: 10px;
+    margin-right: -70px;
+    margin-left: -70px;
+}
+
+.ladoDireito {   
+    padding-top: 20px;
+    padding-bottom: 15px;
+    padding-right: auto;
+    padding-left: auto;
+    margin-right: -70px;
+    margin-left: -50px; 
+} 
+
+h3 {
+    text-align: center;   
+}
+
+p {
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+}
+
+.frase {
+    margin-right: -70px;
+    margin-left: -70px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    text-align: justify;
+}
+
+
+.buttons {
+    margin-top: 20px;
+    color: white;   
+}
+
+.buttons .fat {
+    background: #5C4237;
+    width: 230px;
+    height: 47px;
+    border-radius: 6px;
+    text-align: center;
+	cursor: pointer;
+    outline: none;
+    text-decoration: none;
+    text-decoration-line: none;
+    outline: none !important;
+}
+.buttons:hover {
+    text-decoration: none;
+    color: white;
+}
+
+a {
+    color: white;
+}

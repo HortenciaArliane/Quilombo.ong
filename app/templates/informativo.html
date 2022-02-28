@@ -3,82 +3,56 @@
 {% block title %}Quilombo.ong{% endblock %}
 
 {% block content %}
-<div class="container mt-4 mb-5">
-  <div class="d-flex justify-content-center row">
-    <div class="col-md-8">
-      <div class="feed p-2">
-        
-        <div class="bg-white border mt-2">
-          <div>
-            <div
-              class="
-                d-flex
-                flex-row
-                justify-content-between
-                align-items-center
-                p-2
-                border-bottom
-              "
-            >
-              <div
-                class="d-flex flex-row align-items-center feed-text px-2"
-              >
-              {% load static %}
-              <img class="logo rounded-circle" width="45" height="45" />
-                <div class="d-flex flex-column flex-wrap ml-2">
-                  <span class="font-weight-bold">Quilombo.ong</span
-                  >
-                </div>
-              </div>
-              
-            </div>
+
+<html lang="pt-br">
+    <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" type="text/css" href="../static/css/informativo.css"/>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+
+        <div class="pagiInformacoes">
+          <h3>Bem vindo(a)!</h3><br>
+
+          <div class="ladoEsquerdo">            
+            <p>Somos um portal informativo e transparente desenvolvido
+                para conter informações<br> das comunidades  quilombolas no RN,
+                funcionando como uma rede social. </p>
           </div>
-          <div class="p-2 px-3">
-            <span>
-              <h3>Seja Bem-Vindo (a) ao Quilombo.Ong!</h3>
-               Somos um portal informativo e transparente , 
-                  desenvolvido para conter informações das comunidades quilombolas no RN, 
-                  funcionando como uma rede social.</span>
-                  <br>
-                  <form  method="post" >
-                    <div>
-                      <h4>Confirme que esta de acordo com os termos abaixo:</h4>
-                    <input type = "checkbox" id = "chk1" name = "chk1" value = "check1" required>
-                    <label for = ""> Subscreva a newsletter? </label><br>
-                                
-                     
-                    </div>
-                    <button type = "submit"><a class="nav-link" href="{% url 'account_signup' %}">Cadastre-se</a> </button>
-                  </form.charfield>
-                    
-                </div>
-                
+
+          <div class="frase">
+            <span>Para continuar, aceite os seguintes termos:</span>
+          </div>
+
+            <form method="post">
+              <div class="ladoDireito">
+                <input type="checkbox" name="Termo1" value="termo1" id="check1" required>
+                <label class="test" for="check1"> Tenho o CNPJ de minha comunidade Quilombola.</label><br>
             
-          </div>
+                <input type="checkbox" name="Termo2" value="termo2" id="'check2" required>
+                <label for="check2"> Assumo inteira responsabilidade pelo conteúdo postado por esse perfil.</label><br>
+
+                <input type="checkbox" name="Termo2" value="termo2" id="'check3" required>
+                <label for="check3"> Li e aceito os termos de serviços e privacidade do Quilombo.ong.</label>
+              </div>
+
+              <div class="buttons">
+                <button class="fat" type = "submit"><a class="nav-link" href="{% url 'account_signup' %}"><strong>Cadastre-se</strong></a> </button> &emsp;&emsp;
+                <button class="fat" onClick="cancelar"> <a href="../templates/index.html"><strong>Cancelar</strong></button></a>;   
+              </div><br>
+            </form.CharField>  
           
         </div>
-        
-          </div>
-        </div>
-      </div>
-    </div>
-    <script language='javascript'>
-      function verifica_checkbox()
-      {
-         var chk1 = document.seu_form.chk1.checked;
-         var chk2 = document.seu_form.chk2.checked;
-      
-         if (chk1 == false)
-         {
-            alert('marque o check 1');
-            document.seu_form.chk1.focus();  
-            return false;
-         }
-         else if (chk1 == true)
-         {
-            alert('você marcou o checkbox certo!');
-         }
-         return true;
-      }
-      </script>
+
+    <script src="../static/js/polls/functions.js"></script>
+  
+    </body>
+</html>
+
 {% endblock %}
