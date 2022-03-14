@@ -31,3 +31,18 @@ function abrirMenu(){
     document.getElementById('navbarScroll').style.display = 'none';
 
 }
+
+/*function HabiDsabi() {
+    if (document.getElementById('habi').checked == true) {
+        document.getElementById('envia').disabled = ""
+
+    } if (document.getElementById('habi').checked == false) {
+        document.getElementById('envia').disabled = "disabled"
+
+    }
+}
+
+function Cad() {
+    window.open("{% url 'account_signup' %}");
+} */
+

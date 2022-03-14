@@ -101,3 +101,23 @@
 .search{
     display: none !important;
 }
+
+#btn1 {
+    background-color: #85523b;
+    font-weight: bold;
+    border-color: #85523b;
+}
+
+#btn1:hover {
+    background-color:  #745143; 
+    color: #F5F8FD;
+
+}
+
+/*.filestyle {
+    background-image: url(https://www.gstatic.com/images/icons/material/system_gm/2x/attach_file_black_20dp.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 20px;
+
+}*/

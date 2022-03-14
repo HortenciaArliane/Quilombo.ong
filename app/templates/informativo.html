@@ -16,7 +16,7 @@
     </head>
 
     <body>
-
+        <article class="p-2 px-3"></article>
         <div class="pagiInformacoes">
           <h3>Bem vindo(a)!</h3><br>
 
@@ -30,7 +30,8 @@
             <span>Para continuar, aceite os seguintes termos:</span>
           </div>
 
-            <form method="post">
+            <form name="post">
+              {% csrf_token %}
               <div class="ladoDireito">
                 <input type="checkbox" name="Termo1" value="termo1" id="check1" required>
                 <label class="test" for="check1"> Tenho o CNPJ de minha comunidade Quilombola.</label><br>
@@ -44,7 +45,7 @@
 
               <div class="buttons">
                 <button class="fat" type = "submit"><a class="nav-link" href="{% url 'account_signup' %}"><strong>Cadastre-se</strong></a> </button> &emsp;&emsp;
-                <button class="fat" onClick="cancelar"> <a href="../templates/index.html"><strong>Cancelar</strong></button></a>;   
+                <button class="fat" onClick="cancelar"> <a href="{% url 'home' %}"><strong>Cancelar</strong></button></a>;   
               </div><br>
             </form.CharField>  
           
